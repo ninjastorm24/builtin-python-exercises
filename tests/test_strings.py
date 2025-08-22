@@ -57,8 +57,22 @@ def test_q03_is_palindrome():
     assert q03_is_palindrome("nurses run") is False  # spaces not ignored
 
 def test_q04_count_words():
-    # TODO: Write test cases for q04_count_words
-    assert True  # placeholder
+    # Normal cases
+    assert q04_count_words("example") == 1
+    assert q04_count_words("hello world") == 2
+    assert q04_count_words("Python is fun") == 3
+    
+    # Leading/trailing/multiple spaces
+    assert q04_count_words("   Leading and trailing spaces   ") == 4
+    assert q04_count_words("Multiple    spaces between words") == 4
+    
+    # Tabs and newlines
+    assert q04_count_words("New\nline and\ttab separated") == 5
+    
+    # Edge cases
+    assert q04_count_words("") == 0
+    assert q04_count_words("   ") == 0  # only spaces
+    assert q04_count_words("\t\n") == 0  # only whitespace characters
 
 def test_q05_to_uppercase():
     # TODO: Write test cases for q05_to_uppercase

@@ -75,8 +75,27 @@ def test_q04_count_words():
     assert q04_count_words("\t\n") == 0  # only whitespace characters
 
 def test_q05_to_uppercase():
-    # TODO: Write test cases for q05_to_uppercase
-    assert True  # placeholder
+    # Normal lowercase letters
+    assert q05_to_uppercase("example") == "EXAMPLE"
+    assert q05_to_uppercase("hello world") == "HELLO WORLD"
+    assert q05_to_uppercase("python123") == "PYTHON123"
+
+    # Mixed case letters
+    assert q05_to_uppercase("Mixed CASE") == "MIXED CASE"
+    assert q05_to_uppercase("Already UPPER") == "ALREADY UPPER"
+
+    # Empty string
+    assert q05_to_uppercase("") == ""
+
+    # Numbers, spaces, punctuation should remain unchanged
+    assert q05_to_uppercase("numbers 123 and symbols !@#") == "NUMBERS 123 AND SYMBOLS !@#"
+
+    # Single characters
+    assert q05_to_uppercase("a") == "A"
+    assert q05_to_uppercase("Z") == "Z"
+
+    # Unicode characters (unchanged)
+    assert q05_to_uppercase("café") == "CAFé"
 
 def test_q06_to_lowercase():
     # TODO: Write test cases for q06_to_lowercase

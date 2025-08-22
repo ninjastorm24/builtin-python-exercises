@@ -1,0 +1,71 @@
+import os
+
+# -------------------------------
+# 1. List of 25 string problems
+# -------------------------------
+string_problems = [
+    ("q01_reverse_string", "Reverse a string without using slicing."),
+    ("q02_count_vowels", "Count the number of vowels in a string."),
+    ("q03_is_palindrome", "Check if a string is a palindrome (reads same backward)."),
+    ("q04_count_words", "Count the number of words in a string."),
+    ("q05_to_uppercase", "Convert a string to uppercase without using str.upper()."),
+    ("q06_to_lowercase", "Convert a string to lowercase without using str.lower()."),
+    ("q07_is_digit_string", "Check if a string contains only digits."),
+    ("q08_count_char", "Count the number of occurrences of a specific character in a string."),
+    ("q09_remove_vowels", "Remove all vowels from a string."),
+    ("q10_most_frequent_char", "Find the most frequent character in a string."),
+    ("q11_is_anagram", "Check if a string is an anagram of another string."),
+    ("q12_count_case", "Count the number of uppercase and lowercase letters in a string."),
+    ("q13_remove_spaces", "Remove all spaces from a string."),
+    ("q14_replace_substring", "Replace all occurrences of a substring with another substring."),
+    ("q15_check_start_end", "Check if a string starts with a given prefix and ends with a given suffix."),
+    ("q16_count_consonants", "Count the number of consonants in a string."),
+    ("q17_unique_chars", "Find all unique characters in a string."),
+    ("q18_remove_duplicates", "Remove duplicate characters from a string."),
+    ("q19_is_pangram", "Check if a string is a pangram (contains all letters a-z)."),
+    ("q20_count_sentences", "Count the number of sentences in a string (split by ., !, ?)."),
+    ("q21_longest_word", "Find the longest word in a string."),
+    ("q22_is_alpha", "Check if a string contains only alphabets."),
+    ("q23_count_digits", "Count the number of digits in a string."),
+    ("q24_string_to_list", "Split a string into a list of characters."),
+    ("q25_reverse_words", "Reverse the order of words in a string."),
+]
+
+# -------------------------------
+# 2. Create solutions/strings folder
+# -------------------------------
+solutions_folder = os.path.join("solutions", "strings")
+os.makedirs(solutions_folder, exist_ok=True)
+
+# -------------------------------
+# 3. Generate solution files
+# -------------------------------
+for filename, description in string_problems:
+    file_path = os.path.join(solutions_folder, f"{filename}.py")
+    with open(file_path, "w") as f:
+        f.write(f'"""\n{description}\n\nExample:\n>>> {filename}("example")\n"""\n\n')
+        f.write(f"def {filename}():\n    pass\n\n")
+        f.write('if __name__ == "__main__":\n    print("This is a placeholder for testing")\n')
+
+print(f"✅ 25 solution files created in {solutions_folder}/")
+
+# -------------------------------
+# 4. Create tests folder and test file
+# -------------------------------
+tests_folder = "tests"
+os.makedirs(tests_folder, exist_ok=True)
+test_file_path = os.path.join(tests_folder, "test_strings.py")
+
+with open(test_file_path, "w") as f:
+    # Import all solution functions
+    for filename, _ in string_problems:
+        f.write(f"from solutions.strings.{filename} import {filename}\n")
+    f.write("\n\n")
+    
+    # Create test functions with placeholders
+    for filename, _ in string_problems:
+        f.write(f"def test_{filename}():\n")
+        f.write(f"    # TODO: Write test cases for {filename}\n")
+        f.write(f"    assert True  # placeholder\n\n")
+
+print(f"✅ Test file created: {test_file_path}")

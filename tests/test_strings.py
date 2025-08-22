@@ -111,8 +111,17 @@ def test_q06_to_lowercase():
     assert q06_to_lowercase("!@#$%^&*()") == "!@#$%^&*()"  # symbols only
 
 def test_q07_is_digit_string():
-    # TODO: Write test cases for q07_is_digit_string
-    assert True  # placeholder
+    # Valid digit strings
+    assert q07_is_digit_string("12345") == True
+    assert q07_is_digit_string("00123") == True
+    assert q07_is_digit_string("0") == True
+    assert q07_is_digit_string("9876543210") == True
+
+    # Invalid strings
+    assert q07_is_digit_string("123abc") == False
+    assert q07_is_digit_string("example") == False
+    assert q07_is_digit_string("123 456") == False  # spaces not digits
+    assert q07_is_digit_string("") == False          # empty string
 
 def test_q08_count_char():
     # TODO: Write test cases for q08_count_char

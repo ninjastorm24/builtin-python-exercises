@@ -11,6 +11,8 @@ def q01_reverse_string(s):
         reverse_str = char + reverse_str
     return reverse_str
 
+# chech git
+
 if __name__ == "__main__":
     print(q01_reverse_string("example"))  # elpmaxe
     print(q01_reverse_string("hello"))    # olleh

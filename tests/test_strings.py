@@ -98,8 +98,17 @@ def test_q05_to_uppercase():
     assert q05_to_uppercase("café") == "CAFé"
 
 def test_q06_to_lowercase():
-    # TODO: Write test cases for q06_to_lowercase
-    assert True  # placeholder
+    # Basic examples
+    assert q06_to_lowercase("Example") == "example"
+    assert q06_to_lowercase("PYTHON") == "python"
+    assert q06_to_lowercase("Hello World!") == "hello world!"
+    assert q06_to_lowercase("123 ABC xyz!") == "123 abc xyz!"
+    
+    # Edge cases
+    assert q06_to_lowercase("") == ""              # empty string
+    assert q06_to_lowercase("already lowercase") == "already lowercase"
+    assert q06_to_lowercase("123456") == "123456"  # numbers only
+    assert q06_to_lowercase("!@#$%^&*()") == "!@#$%^&*()"  # symbols only
 
 def test_q07_is_digit_string():
     # TODO: Write test cases for q07_is_digit_string

@@ -122,10 +122,13 @@ def test_q07_is_digit_string():
     assert q07_is_digit_string("example") == False
     assert q07_is_digit_string("123 456") == False  # spaces not digits
     assert q07_is_digit_string("") == False          # empty string
-
+    
 def test_q08_count_char():
-    # TODO: Write test cases for q08_count_char
-    assert True  # placeholder
+    assert q08_count_char("banana", "a") == 3   # multiple occurrences
+    assert q08_count_char("banana", "b") == 1   # single occurrence
+    assert q08_count_char("banana", "z") == 0   # character not present
+    assert q08_count_char("", "a") == 0         # empty string
+    assert q08_count_char("aaaaa", "a") == 5    # all characters are the same
 
 def test_q09_remove_vowels():
     # TODO: Write test cases for q09_remove_vowels

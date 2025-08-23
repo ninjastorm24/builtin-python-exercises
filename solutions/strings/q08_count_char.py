@@ -36,7 +36,7 @@ def q08_count_char(s:str,char:str)-> int:
     for x in s:
         if x == char:
             count += 1
-    return count        
+    return count       
 
 
 if __name__ == "__main__":

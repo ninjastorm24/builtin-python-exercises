@@ -122,7 +122,7 @@ def test_q07_is_digit_string():
     assert q07_is_digit_string("example") == False
     assert q07_is_digit_string("123 456") == False  # spaces not digits
     assert q07_is_digit_string("") == False          # empty string
-    
+
 def test_q08_count_char():
     assert q08_count_char("banana", "a") == 3   # multiple occurrences
     assert q08_count_char("banana", "b") == 1   # single occurrence
@@ -131,8 +131,14 @@ def test_q08_count_char():
     assert q08_count_char("aaaaa", "a") == 5    # all characters are the same
 
 def test_q09_remove_vowels():
-    # TODO: Write test cases for q09_remove_vowels
-    assert True  # placeholder
+    assert q09_remove_vowels("example") == "xmpl"
+    assert q09_remove_vowels("hello world") == "hll wrld"
+    assert q09_remove_vowels("AEIOU") == ""  # all vowels removed
+    assert q09_remove_vowels("Python Programming") == "Pythn Prgrmmng"
+    assert q09_remove_vowels("xyz") == "xyz"  # no vowels
+    assert q09_remove_vowels("") == ""  # empty input
+    assert q09_remove_vowels("aEiOu") == ""  # mixed-case vowels
+    assert q09_remove_vowels("Data Science") == "Dt Scnc"
 
 def test_q10_most_frequent_char():
     # TODO: Write test cases for q10_most_frequent_char

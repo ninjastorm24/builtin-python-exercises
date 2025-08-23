@@ -141,8 +141,26 @@ def test_q09_remove_vowels():
     assert q09_remove_vowels("Data Science") == "Dt Scnc"
 
 def test_q10_most_frequent_char():
-    # TODO: Write test cases for q10_most_frequent_char
-    assert True  # placeholder
+    # 'e' appears 2 times
+    assert q10_most_frequent_char("example") == "e"
+
+    # 'l' appears 3 times
+    assert q10_most_frequent_char("hello world") == "l"
+
+    # 'i' appears 4 times, tied with 's'. Either is acceptable.
+    assert q10_most_frequent_char("mississippi") in ["i", "s"]
+
+    # 'c' appears 4 times
+    assert q10_most_frequent_char("aabbbcccc") == "c"
+
+    # all occur once → return the first one ("x")
+    assert q10_most_frequent_char("xyz") == "x"
+
+    # empty string → return empty
+    assert q10_most_frequent_char("") == ""
+
+    # numbers also count as characters → "1" comes first
+    assert q10_most_frequent_char("112233") == "1"
 
 def test_q11_is_anagram():
     # TODO: Write test cases for q11_is_anagram

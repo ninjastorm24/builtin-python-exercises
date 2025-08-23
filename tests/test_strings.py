@@ -192,8 +192,29 @@ def test_q12_count_case():
     assert q12_count_case("") == (0, 0)           # empty string edge case
 
 def test_q13_remove_spaces():
-    # TODO: Write test cases for q13_remove_spaces
-    assert True  # placeholder
+   
+
+    # no spaces
+    assert q13_remove_spaces("example") == "example"
+
+    # normal case with one space
+    assert q13_remove_spaces("hello world") == "helloworld"
+
+    # leading spaces
+    assert q13_remove_spaces("   leading spaces") == "leadingspaces"
+
+    # trailing spaces
+    assert q13_remove_spaces("trailing spaces   ") == "trailingspaces"
+
+    # multiple spaces inside
+    assert q13_remove_spaces("  multiple   spaces  inside  ") == "multiplespacesinside"
+
+    # empty string
+    assert q13_remove_spaces("") == ""
+
+    # underscores are not spaces
+    assert q13_remove_spaces("no_space") == "no_space"
+
 
 def test_q14_replace_substring():
     # TODO: Write test cases for q14_replace_substring

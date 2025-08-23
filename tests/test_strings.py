@@ -162,9 +162,25 @@ def test_q10_most_frequent_char():
     # numbers also count as characters → "1" comes first
     assert q10_most_frequent_char("112233") == "1"
 
+from solutions.strings.q11_is_anagram import q11_is_anagram
+
 def test_q11_is_anagram():
-    # TODO: Write test cases for q11_is_anagram
-    assert True  # placeholder
+    # Simple anagrams
+    assert q11_is_anagram("listen", "silent") == True
+    assert q11_is_anagram("triangle", "integral") == True
+    assert q11_is_anagram("apple", "papel") == True
+    assert q11_is_anagram("night", "thing") == True
+
+    # Not anagrams
+    assert q11_is_anagram("rat", "car") == False
+    assert q11_is_anagram("hello", "Hello") == False  # case-sensitive
+    assert q11_is_anagram("aabb", "ab") == False      # different lengths
+
+    # Edge cases
+    assert q11_is_anagram("", "") == True             # empty strings
+    assert q11_is_anagram("123", "321") == True      # numbers as characters
+    assert q11_is_anagram("aabbcc", "abcabc") == True # repeated characters
+
 
 def test_q12_count_case():
     # TODO: Write test cases for q12_count_case

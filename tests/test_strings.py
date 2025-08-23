@@ -183,8 +183,13 @@ def test_q11_is_anagram():
 
 
 def test_q12_count_case():
-    # TODO: Write test cases for q12_count_case
-    assert True  # placeholder
+    assert q12_count_case("Example") == (1, 6)    # 1 uppercase, 6 lowercase
+    assert q12_count_case("HELLO") == (5, 0)      # all uppercase
+    assert q12_count_case("hello") == (0, 5)      # all lowercase
+    assert q12_count_case("Hello World") == (2, 8)  # spaces ignored
+    assert q12_count_case("Python3") == (1, 5)    # digit ignored
+    assert q12_count_case("12345") == (0, 0)      # only digits
+    assert q12_count_case("") == (0, 0)           # empty string edge case
 
 def test_q13_remove_spaces():
     # TODO: Write test cases for q13_remove_spaces

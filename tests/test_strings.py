@@ -192,8 +192,6 @@ def test_q12_count_case():
     assert q12_count_case("") == (0, 0)           # empty string edge case
 
 def test_q13_remove_spaces():
-   
-
     # no spaces
     assert q13_remove_spaces("example") == "example"
 
@@ -216,13 +214,31 @@ def test_q13_remove_spaces():
     assert q13_remove_spaces("no_space") == "no_space"
 
 
-def test_q14_replace_substring():
-    # TODO: Write test cases for q14_replace_substring
-    assert True  # placeholder
+# def test_q14_replace_substring():
+#     assert q14_replace_substring("hello world", "world", "Python") == "hello Python"
+#     assert q14_replace_substring("banana", "na", "xy") == "baxyxy"
+#     assert q14_replace_substring("aaaa", "aa", "b") == "bb"   # overlapping handled left to right
+#     assert q14_replace_substring("I love cats", "cats", "dogs") == "I love dogs"
+#     assert q14_replace_substring("123-123-123", "123", "X") == "X-X-X"
+#     assert q14_replace_substring("nothing here", "z", "y") == "nothing here"
+#     assert q14_replace_substring("", "a", "b") == ""
+#     assert q14_replace_substring("apple", "apple", "orange") == "orange"
+
 
 def test_q15_check_start_end():
-    # TODO: Write test cases for q15_check_start_end
-    assert True  # placeholder
+    # Valid cases
+    assert q15_check_start_end("example", prefix="ex", suffix="ple") is True
+    assert q15_check_start_end("hello world", prefix="he", suffix="ld") is True
+    assert q15_check_start_end("data", prefix="da", suffix="ta") is True
+    assert q15_check_start_end("python", prefix="", suffix="on") is True  # empty prefix
+    assert q15_check_start_end("python", prefix="py", suffix="") is True  # empty suffix
+    assert q15_check_start_end("", prefix="", suffix="") is True  # empty string edge case
+
+    # Invalid cases
+    assert q15_check_start_end("example", prefix="ex", suffix="amp") is False
+    assert q15_check_start_end("hello world", prefix="wo", suffix="ld") is False
+    assert q15_check_start_end("python", prefix="java", suffix="on") is False
+    assert q15_check_start_end("python", prefix="py", suffix="thon3") is False
 
 def test_q16_count_consonants():
     # TODO: Write test cases for q16_count_consonants
